@@ -1,0 +1,297 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #373a41;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Container */
+.container {
+  background-color: rgb(225, 216, 216);
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  padding: 30px;
+}
+
+/* Heading */
+h1 {
+  text-align: left;
+  color: #2158e1;
+  margin-bottom: 25px;
+}
+
+/* Add Student Section */
+.add-student-section {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.add-student-section input {
+  width: 200px;
+  flex: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.add-student-section button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2158e1;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.add-student-section button:hover {
+  background-color: #1846c4;
+}
+
+/* Features Section */
+.features-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  justify-content: space-between;
+    margin-bottom: 50px; /* increase this value to add more space */
+}
+
+.features-left {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Month Selector: label + input inline */
+.month-selector {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.month-selector label {
+  font-weight: 500;
+  min-width: 120px;
+}
+
+.month-selector input#monthSelect {
+  width: 120px;
+  padding: 8px 12px;
+  padding-right: 35px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: #f4f7ff;
+  color: #333;
+  transition: all 0.2s ease-in-out;
+
+  /* Remove default calendar arrow */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* Custom down arrow */
+  background-image: url('https://cdn-icons-png.flaticon.com/512/2985/2985150.png');
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 12px 12px;
+}
+
+.month-selector input#monthSelect:focus {
+  border-color: #2158e1;
+  box-shadow: 0 0 4px rgba(33, 88, 225, 0.5);
+}
+
+.month-selector input#monthSelect::placeholder {
+  color: #999;
+}
+.month-selector label,
+.off-days label {
+    color: #525866; /* change to any color you want */
+    font-weight: 500; /* optional: keep text bold */
+}
+
+/* Off Days Selector: label + selects inline */
+.off-days {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.off-days label {
+  font-weight: 500;
+  min-width: 120px;
+}
+
+.off-days select {
+  width: 80px;
+  padding: 6px 12px;
+  padding-right: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+  background-color: #f4f7ff;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  /* Remove default arrow */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* Custom down arrow */
+  background-image: url('https://cdn-icons-png.flaticon.com/512/2985/2985150.png');
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 12px 12px;
+}
+
+/* Hover & Focus Effect */
+.off-days select:hover,
+.off-days select:focus {
+  border-color: #2158e1;
+  box-shadow: 0 0 4px rgba(33, 88, 225, 0.5);
+}
+
+/* Reduce gap between Day 1 and Day 2 */
+.off-days select + select {
+  margin-left: 2px;
+}
+
+/* Clear Data Button */
+.clear-data {
+  display: flex;
+  align-items: center;
+}
+
+.clear-data button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #e53935;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.clear-data button:hover {
+  background-color: #b71c1c;
+  color: #ffffff;
+}
+
+/* Attendance Table */
+.attendance-table {
+  overflow-x: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.attendance-table table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1000px;
+}
+
+.attendance-table th,
+.attendance-table td {
+  text-align: center;
+  padding: 10px 6px;
+  border-bottom: 1px solid #ddd;
+  min-width: 85px;
+}
+
+.attendance-table thead th {
+  background-color: #2158e1;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.attendance-table th small {
+  display: block;
+  font-size: 10px;
+  color: #ccc;
+  margin-top: 2px;
+}
+
+.attendance-table tr:hover {
+  background-color: #f0f4ff;
+}
+
+/* Checkbox Styling */
+.attendance-table input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* Delete Button */
+.deleteBtn {
+  padding: 4px 8px;
+  background-color: #e53935;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.deleteBtn:hover {
+  background-color: #b71c1c;
+}
+
+/* Percentage Column */
+.percentage {
+  font-weight: bold;
+  color: #2158e1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .features-section {
+    flex-direction: column;
+  }
+
+  .month-selector,
+  .off-days {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .month-selector label,
+  .off-days label {
+    min-width: auto;
+  }
+
+  .off-days select {
+    width: 100%;
+  }
+
+  .clear-data {
+    align-self: flex-start;
+  }
+}

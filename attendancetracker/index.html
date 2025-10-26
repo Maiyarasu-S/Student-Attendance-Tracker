@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Attendance Tracker</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Flatpickr CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>Student Attendance Tracker</h1>
+
+    <!-- Add Student Section -->
+    <div class="add-student-section">
+      <input type="text" id="studentName" placeholder="Enter student name">
+      <button id="addStudentBtn">Add Student</button>
+    </div>
+
+    <!-- Features Section -->
+ <div class="features-section">
+  <div class="features-left">
+    <div class="month-selector">
+      <label for="monthSelect">Select Your Month:</label>
+      <input type="text" id="monthSelect" placeholder="Select Month">
+    </div>
+
+    <div class="off-days">
+      <label for="offDay1">Select Two Off Days:</label>
+      <select id="offDay1">
+        <option value="">Day 1</option>
+        <option>Sun</option>
+        <option>Mon</option>
+        <option>Tue</option>
+        <option>Wed</option>
+        <option>Thu</option>
+        <option>Fri</option>
+        <option>Sat</option>
+      </select>
+      <select id="offDay2">
+        <option value="">Day 2</option>
+        <option>Sun</option>
+        <option>Mon</option>
+        <option>Tue</option>
+        <option>Wed</option>
+        <option>Thu</option>
+        <option>Fri</option>
+        <option>Sat</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="clear-data">
+    <button id="clearDataBtn">Clear Data</button>
+  </div>
+</div>   
+
+    <!-- Attendance Table -->
+    <div class="attendance-table">
+      <table id="attendanceTable">
+        <thead>
+          <tr>
+            <th>Student Name</th>
+            <!-- Placeholder date columns for November -->
+            <th>01-Nov<br><small>Fri</small></th>
+            <th>02-Nov<br><small>Sat</small></th>
+            <th>03-Nov<br><small>Sun</small></th>
+            <th>04-Nov<br><small>Mon</small></th>
+            <th>05-Nov<br><small>Tue</small></th>
+            <th>06-Nov<br><small>Wed</small></th>
+            <th>07-Nov<br><small>Thu</small></th>
+            <th>08-Nov<br><small>Fri</small></th>
+            <th>09-Nov<br><small>Sat</small></th>
+            <th>10-Nov<br><small>Sun</small></th>
+            <th>11-Nov<br><small>Mon</small></th>
+            <th>12-Nov<br><small>Tue</small></th>
+            <th>13-Nov<br><small>Wed</small></th>
+            <th>14-Nov<br><small>Thu</small></th>
+            <th>15-Nov<br><small>Fri</small></th>
+            <th>16-Nov<br><small>Sat</small></th>
+            <th>17-Nov<br><small>Sun</small></th>
+            <th>18-Nov<br><small>Mon</small></th>
+            <th>19-Nov<br><small>Tue</small></th>
+            <th>20-Nov<br><small>Wed</small></th>
+            <th>21-Nov<br><small>Thu</small></th>
+            <th>22-Nov<br><small>Fri</small></th>
+            <th>23-Nov<br><small>Sat</small></th>
+            <th>24-Nov<br><small>Sun</small></th>
+            <th>25-Nov<br><small>Mon</small></th>
+            <th>26-Nov<br><small>Tue</small></th>
+            <th>27-Nov<br><small>Wed</small></th>
+            <th>28-Nov<br><small>Thu</small></th>
+            <th>29-Nov<br><small>Fri</small></th>
+            <th>30-Nov<br><small>Sat</small></th>
+
+            <th>Percentage</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <!-- Student rows will appear here dynamically -->
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+
+  <!-- Flatpickr JS -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/index.js"></script>
+
+  <script>
+flatpickr("#monthSelect", {
+  plugins: [
+    new monthSelectPlugin({
+      shorthand: true,       // true → Jan, Feb, Mar, etc.
+      dateFormat: "M-Y",     // input displays Nov-25
+      altFormat: "F Y",      // full month name if needed
+    })
+  ],
+  defaultDate: new Date(),    // optional: show current month by default
+});
+
+  </script>
+
+</body>
+</html>
