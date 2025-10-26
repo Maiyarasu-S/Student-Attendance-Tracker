@@ -5,7 +5,7 @@ A simple, interactive web app to manage student attendance.
 <br>
 </p>
 
-CLICK THIS LINK 🔗 ➤➤➤➤ [![View Landing Page](https://img.shields.io/badge/View-Projects-blue)](https://maiyarasu-s.github.io/CheckMate/)
+CLICK THIS LINK 🔗 ➤➤➤➤ [![View Landing Page](https://img.shields.io/badge/View-Projects-blue)](https://maiyarasu-s.github.io/Student-Attendance-Tracker/)
 
 <img style="border-radius:10px;" src="Screenshot-2.png">
 
